@@ -204,10 +204,19 @@ plot(model2)
 ```{r}
 model3 <- lm(total_g ~ sla + species_name,
              data = drought_exp_clean)
-
+par(mfrow = c(2, 2))
 plot(model3)
 ```
 **LOOK AT DIOGNOSTICS**
+
+
+```{r}
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean)
+
+par(mfrow = c(2, 2))
+plot(model4)
+```
 
 # Model selection
 
@@ -217,13 +226,14 @@ From the `MuMIn` package
 model.sel(model0,
           model1, 
           model2, 
-          model3)
+          model3,
+          model4)
 ```
 
 Out of the four models we have tried, the best model is the one that includes **specific leaf area, water treatment, and species (saturated model)**  
 
 Note that this may change once you fit and compare the other model!
-**DOUBLE CHEKC DIAGNOSTICS FOR BEST MODEL**
+**DOUBLE CHECK DIAGNOSTICS FOR BEST MODEL**
 # Model summary
 
 ```{r}
@@ -328,9 +338,10 @@ modelsummary::modelsummary( # this function takes a list of models
     "null" = model0, # "model name" = model object
     "model 1" = model1,
     "model 2" = model2,
-    "model 3" = model3
-  )
-) 
+    "model 3" = model3,
+    "model 4" = model4))
+
+
 
 ```
 
