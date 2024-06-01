@@ -1,0 +1,124 @@
+---
+title: "Homework 3"
+author: "Rachel Brody"
+date: 2024-06-2
+format: docx
+editor: visual
+---
+
+# ENVS 193 DS Homework 3
+
+## Set Up
+
+```{r}
+#read in packages and data
+
+# general use
+library(tidyverse)
+library(readxl)
+library(here)
+library(janitor)
+
+# visualizing pairs
+library(GGally)
+
+# model selection
+library(MuMIn)
+
+# model predictions
+library(ggeffects)
+
+# model tables
+library(gtsummary)
+library(flextable)
+library(modelsummary)
+
+drought_exp <- read_xlsx(path = here("data", 
+                                     "Valliere_etal_EcoApps_Data.xlsx"),
+                         sheet = "First Harvest")
+
+# quick look at data 
+str(drought_exp)
+class(drought_exp)
+```
+
+
+## Problems
+
+### Problem 1. Multiple linear regression: model selection and construction (52 points)
+
+Use the information from the `homework-starter-doc.qmd` to do this problem.
+
+#### a. Make a table _or_ list of all the models from class and the last one you constructed on your own. Write a caption for your table. (8 points)  
+
+**Caption:** table captions typically go above the table. Number the table and provide a title. Describe what is in the table (columns and rows).  
+
+**Table:** In your table, each row should be a model with the model number (1, 2, 3, etc.) and the predictors for each model.  
+
+:::{.callout-note}
+#### Double check your work!
+There should be 5 models total (null model + 4 models with predictors).
+:::
+
+```{r}
+
+
+```
+
+
+#### b. Write a 5-6 sentence "statistical methods" section. (8 points)
+
+Your answer should be in paragraph form and include:  
+
+- how you addressed the central question(s) (i.e. to examine the influence of ____, ____, and ____ on _____, I...)  
+- how you chose the final model (i.e. to determine the model that best described ____, I...)  
+- how you visually determined that your final model conformed to the assumptions of a linear model (i.e. to evaluate linear model assumptions, I...)  
+
+To examine the influence of specific leaf area, species, and water treatment on the total biomass of plants, a linear regression model was fit to the data.
+
+
+#### c. Make a visualization of the model predictions with underlying data for your "best" model. (20 points)  
+
+Show and annotate all your code. For full credit:  
+
+- make the underlying data more transparent than the model predictions  
+- display species names in full (not as species codes like ENCCAL or ESCCAL)  
+- display water treatment types in full (not as WW or DS)  
+- represent well-watered and drought stressed treatments with different colors  
+- use colors that are _not_ the default `ggplot()` colors  
+- facet your plot by species  
+- remove the legend  
+- finalize the plot  
+
+:::{.callout-note}
+Make sure that the only output is the visualization!
+:::
+
+```{r}
+ggpredict(model4, terms = c("species_names", "water_treatment")) %>% 
+  plot(show_data =TRUE)+
+  scale_color_manual(values = c())=
+  scale_fill_manual()+
+  theme_classic
+
+```
+
+
+#### d. Write a caption for your visualization. (6 points)  
+
+Include a data citation.    
+
+#### e. Write a 3-4 sentence results section. (10 points)
+
+Your answer should be in paragraph form and address the following points:  
+
+- what predictors "best" described total mass (include model statistics here)?  
+- on average, what differences did you find between water treatments?  
+- on average, what differences did you find between species?  
+
+
+```{r}
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
