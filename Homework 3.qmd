@@ -113,12 +113,12 @@ Make sure that the only output is the visualization!
 :::
 
 ```{r}
-model_preds <- ggpredict(model4, 
+model_preds <- ggpredict(model4, #make predictions using best model
                          terms = c("water_treatment", 
-                                   "species_name"))
+                                   "species_name")) #model includes these predictors
 
-model_preds_for_plotting <- as.data.frame(model_preds) %>% 
-  rename(water_treatment = x,
+model_preds_for_plotting <- as.data.frame(model_preds) %>% #create another data frame with easier column names to use for plotting
+  rename(water_treatment = x, #rename columns
          species_name = group,
          total_g = predicted)
 
