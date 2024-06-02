@@ -119,7 +119,8 @@ model_preds <- ggpredict(model4,
 
 model_preds_for_plotting <- as.data.frame(model_preds) %>% 
   rename(water_treatment = x,
-         species_name = group)
+         species_name = group,
+         total_g = predicted)
 
 ```
 
@@ -136,11 +137,12 @@ ggplot(drought_exp_clean, aes(x = water_treatment, y = total_g)) +
   theme(legend.position = "none")+ #remove legend
 
 #add predicted data
-geom_point(data = model_preds_for_plotting, aes(x = water_treatment, y = predicted, color = water_treatment), alpha = 1, size = 1) #plot the predicted data from model_preds_for_plotting data frame #set same aesthetics as observed data #set alpha as 1 to make opaque and set size to 1
+geom_point(data = model_preds_for_plotting, aes(x = water_treatment, y = total_g, color = water_treatment), alpha = 1, size = 1)+#plot the predicted data from model_preds_for_plotting data frame #set same aesthetics as observed data #set alpha as 1 to make opaque and set size to 1
+  geom_errorbar(data = model_preds_for_plotting, aes(x = water_treatment, ymin = conf.low, ymax = conf.high, color = water_treatment), width = 0, size = 0.5)
 ```
 
 #### d. Write a caption for your visualization. (6 points)  
-**Figure 1. This figure displays the total plant mass in grams predicted by Model 4 based on water treatment and species underlaid with the actual observed data. Predicted values are represented by opaque points, while the transparent points represent the observed data. The predicted and observed data is separated into species, each with their own graph, and all points representing well watered plants is navy blue, while drought stressed data is maroon.**
+**Figure 1. This figure displays the total plant mass in grams predicted by Model 4 based on water treatment and species underlaid with the actual observed data. Predicted values are represented by opaque points, while the transparent points represent the observed data. The predicted and observed data is separated into species, each with their own graph, and all points representing well watered plants are navy blue, while drought stressed data is maroon. The bars are showing the 95% confidence interval for the predictions.**
 
 **data from:**
 **Valliere, Justin; Zhang, Jacqueline; Sharifi, M.; Rundel, Philip (2019). Data from: Can we condition native plants to increase drought tolerance and improve restoration success? [Dataset]. Dryad. https://doi.org/10.5061/dryad.v0861f7**
@@ -207,13 +209,13 @@ What are the statistical tests the authors are using to address their main resea
 
 Insert the figure or table you described in Homework 2 here.
 
-**The statistical tests the authors are using to address their main research question are **
+**The authors are using generalized linear mixed models (GLMM) with a log-normal distribution to address their main research question which is to evaluate the effect of habitat restoration treatments on the travel speed of four predator and prey species, moose, bear, caribou, and wolf. They included treatment, microtopography, and land cover as predictors and several other factors as random intercepts. They constructed a model for each species for a total of 4.**
 
 #### b. Visual clarity (10 points)
 
 How clearly did the authors _visually_ represent their statistics in figures? For example, are the x- and y-axes in a logical position? Do they show summary statistics (means and SE, for example) and/or model predictions, and if so, do they show the underlying data?  
 
-**The authors represented their statistics fairly well. My main cretique is that they did not include the underlying data in their graph. Otherwise, they had all the useful components of a good visualization, including summary statistics and standard error. The x and y axis are logical, since the **
+**The authors represented their statistics fairly well. The x and y axis are logical, since the researchers want to test the effect of habitat restoration (treatment), on the movement speed of animals, making treatment the explanatory variable and movement speed the response variable. The axisis are labeled informatively with units when appropriate. The box and whisker plots show the median and the spread of the data. The underlying data is included. Each species is represented by its own separate graph. The results are clear and understandable. It is easy to see the difference between treated and untreated and between species.**
 
 
 
@@ -221,11 +223,15 @@ How clearly did the authors _visually_ represent their statistics in figures? Fo
 
 How well did the authors handle "visual clutter"? How would you describe the the data:ink ratio?  
 
-**The visual clutter is minimal.**
+**My main critique is of the color choice. It's uninteresting and there isn't much contrast between the dark grey used for the treated points and the lighter grey used for the untreated points. Replacing the greys with two distinct colors would make the figure more aesthetic and emphasize the two groups more, making not only clearer to understand, but more engaging and likely to be retained by the audience. Also, removing the gridlines would contribute to the overall more polished look, reducing the amount of clutter or unnecessary ink.**
 
 #### d. Recommendations (can be longer than 4 sentences, 10 points)
 
 What recommendations would you make to make the figure better? What would you take out, add, or change? Provide explanations/justifications for each of your recommendations.  
+
+**I would definitely change the greys to colors that are more contrasting and eye catching. The two shades of grey can be difficult to distinguish from one another, more contrasting colors would make differences between the treated and untreated data more visible. Reinforcing these differences is one of the main points of the figure. Removing the grid lines would also be helpful because it reduces visual clutter, making the data easier to focus on, and it makes the figure look more polished and finished so audiences will pay attention more.**
+**Since land cover was found to be a significant covariate, I would consider representing the effect of that variable as well. There would still be four plots separated by species, but instead of jitter plots, they would be scatterplots land cover on the x axis and travel speed on the y. The treated and untreated points would be different colors and a line with a confidence interval would be displayed for each set of data (treated and untreated). Since land cover is not the main interest of the researchers, I understand why they didn't include it in the figure, but it would help more fully explain the model they produced. (They made a table for all the linear regression stats, which I think is enough, but just a suggestion). **
+
 
 **Alternatively**, if they did not represent their statistics in a figure, what kind of figure would you recommend to them? Describe the x- and y-axes, with any geometries and aesthetics (colors, etc.). Provide enough explanation such that someone would be able to create the figure you describe in code. Provide explanations/justifications for the figure you would recommend.    
   
