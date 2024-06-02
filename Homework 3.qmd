@@ -129,7 +129,7 @@ model_preds_for_plotting <- as.data.frame(model_preds) %>%
 #plot observed data
 ggplot(drought_exp_clean, aes(x = water_treatment, y = total_g)) +
   geom_point(aes(color = water_treatment), alpha = 0.3, size = 1) +  #make each water treatment a different color #set low alpha for high transparency #set size of points to 1
-  labs(x = "Water Treatment", y = "Total Mass (g)") + #change axis titles
+  labs(x = "Water Treatment", y = "Total Plant Mass (g)") + #change axis titles
   facet_wrap(~species_name) + #facet by species_name
   scale_color_manual(values = c("Well watered" = "navyblue", "Drought stressed" = "maroon")) + # set color for each water treatment
   theme_classic()+ #set theme to remove gridlines and look more professional
@@ -140,10 +140,10 @@ geom_point(data = model_preds_for_plotting, aes(x = water_treatment, y = predict
 ```
 
 #### d. Write a caption for your visualization. (6 points)  
-**Figure 1. This figure displays the total mass in grams predicted by Model 4 based on water treatment and species underlaid with the actual observed data. Predicted values are represented by opaque points, while the transparent points represent the observed data. The predicted and observed data is separated into species, each with their own graph, and all points representing well watered plants is navy blue, while drought stressed data is maroon.**
+**Figure 1. This figure displays the total plant mass in grams predicted by Model 4 based on water treatment and species underlaid with the actual observed data. Predicted values are represented by opaque points, while the transparent points represent the observed data. The predicted and observed data is separated into species, each with their own graph, and all points representing well watered plants is navy blue, while drought stressed data is maroon.**
 
-data from:
-
+**data from:**
+**Valliere, Justin; Zhang, Jacqueline; Sharifi, M.; Rundel, Philip (2019). Data from: Can we condition native plants to increase drought tolerance and improve restoration success? [Dataset]. Dryad. https://doi.org/10.5061/dryad.v0861f7**
 
 #### e. Write a 3-4 sentence results section. (10 points)
 
@@ -153,8 +153,7 @@ Your answer should be in paragraph form and address the following points:
 - on average, what differences did you find between water treatments?  
 - on average, what differences did you find between species?  
 
-**The model that best predicted the total plant mass was the one that included only species and water treatment as predictors (model stats). On average,------. On average,..... **
-
+**Out of the five models tried, Model 4 best predicted the total plant mass. (Multiple Linear Regression, Multiple R-squared = 0.75,	Adjusted R-squared = 0.73, F(7,26) = 27.08, alpha = 0.05,  p-value< 2.2e-16) This suggests that species and water treatment together are significant predictors of total plant mass. On average, plants that were well watered had a higher total mass. Additionally, plants of the species Grindelia camporum and Eschscholzia californica averaged the highest total mass and plants of the species Penstemon centranthifolius tended to have the lowest total mass. **
 
 ### Problem 2. Affective visualization (24 points)
 
@@ -171,7 +170,7 @@ When thinking of affective visualization, you can expand your ideas of what data
 **Before starting, update your spreadsheet of observations.**  
 
 #### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences). (2 points)
-**For my personal data collected about my cat's scratching behavior, I could create a**
+**For my personal data collected about my cat's scratching behavior, I could create a pie chart of the **
 
 
 #### b. Create a sketch (on paper) of your idea. (2 points)  
