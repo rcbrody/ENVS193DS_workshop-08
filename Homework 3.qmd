@@ -170,7 +170,8 @@ When thinking of affective visualization, you can expand your ideas of what data
 **Before starting, update your spreadsheet of observations.**  
 
 #### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences). (2 points)
-**For my personal data collected about my cat's scratching behavior, I could create a pie chart of the **
+
+**For my personal data collected about my cat's scratching behavior, I could create a pie chart with the proportions of total scratches that occurred during each activity, playing, petting, picking up, and unprovoked. I could further divide each portion of the chart by subcategories. So, the playing section is divided into slices depending on what toy was being played with, the petting section divided into slices depending on what part fo his body I was petting and picking up and unprovoked dont have subcategories. I would make the visualization more affective by illustrating each portion of the pie with visuals that represent that activity (I would draw the different toys for each toy section, draw me picking im up for the picking up portionetc.) Furthermore, I am considering having the pieces of the pie floating around within a larger picture that depicts lucas doing those activities.**
 
 
 #### b. Create a sketch (on paper) of your idea. (2 points)  
@@ -204,7 +205,9 @@ At this point, you have seen and created a lot of figures for this class. Revisi
 
 What are the statistical tests the authors are using to address their main research question?  
 
-Insert the figure or table you described in Homework 2 here.  
+Insert the figure or table you described in Homework 2 here.
+
+**The statistical tests the authors are using to address their main research question are **
 
 #### b. Visual clarity (10 points)
 
