@@ -213,9 +213,15 @@ Insert the figure or table you described in Homework 2 here.
 
 How clearly did the authors _visually_ represent their statistics in figures? For example, are the x- and y-axes in a logical position? Do they show summary statistics (means and SE, for example) and/or model predictions, and if so, do they show the underlying data?  
 
+**The authors represented their statistics fairly well. My main cretique is that they did not include the underlying data in their graph. Otherwise, they had all the useful components of a good visualization, including summary statistics and standard error. The x and y axis are logical, since the **
+
+
+
 #### c. Aesthetic clarity (10 points)
 
 How well did the authors handle "visual clutter"? How would you describe the the data:ink ratio?  
+
+**The visual clutter is minimal.**
 
 #### d. Recommendations (can be longer than 4 sentences, 10 points)
 
