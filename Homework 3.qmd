@@ -188,6 +188,10 @@ If you are making your visualization in R, show the annotated code and the outpu
 
 If you are making your visualization outside of R, include a photo of your visualization in your submission.  
 
+```{r}
+
+```
+
 #### d. Write an artist statement. (8 points)
 
 An artist statement gives the audience context to understand your work. Write 4-5 sentences to address:  
