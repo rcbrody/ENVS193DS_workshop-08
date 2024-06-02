@@ -92,7 +92,7 @@ Your answer should be in paragraph form and include:
 - how you chose the final model (i.e. to determine the model that best described ____, I...)  
 - how you visually determined that your final model conformed to the assumptions of a linear model (i.e. to evaluate linear model assumptions, I...)  
 
-**To examine the influence of specific leaf area, species, and water treatment on the total biomass of plants, I constructed five different liner models to predict total biomass based on a different combination of the three factors, specific leaf area, species, and water treatment, the structure of each model is shown in Table 1. Then, several diagnostic plots, including a residuals v. fitted plot, a scale-location plot, a QQplot of the residuals, and a constant leverage plot were generated for each plot to check that the models fit the normality and variance assumptions of linear models. Once that was confirmed, I compared the AIC's and of all the models and selected the model that had the lowest AIC, while also making logical sense within the biology of the system and conforming to the assumptions of a linear model.**
+**To examine the influence of specific leaf area, species, and water treatment on the total biomass of plants, I constructed five different liner models in R to predict total biomass based on a different combination of three predictors, specific leaf area, species, and water treatment. The structure of each model is shown in Table 1. Then, four diagnostic plots were generated for each model to check that the models fit the normality and variance assumptions of linear models. Models that have homostedasticity showed residuals randomly distributed with no distinct pattern in a Residual v Fitted plot and scale-location plot. Normality was confirmed by seeing that the residuals fell along the fitted line in a QQ plot. A constant leverage plot was used to identify any significant outliers. Once the normality and variance assumptions were confirmed, I compared the AIC's and of all the models and selected the model that had the lowest AIC, while also making logical sense within the biology of the system and conforming to the assumptions of a linear model.**
 
 
 #### c. Make a visualization of the model predictions with underlying data for your "best" model. (20 points)  
@@ -188,7 +188,12 @@ If you are making your visualization in R, show the annotated code and the outpu
 
 If you are making your visualization outside of R, include a photo of your visualization in your submission.  
 
+**I just used R to get the right proportions for the pie chart. I traced them onto my paper.**
 ```{r}
+slices <- c(2, 18, 5, 3, 4, 4, 3, 6) #inpuring data, number of scratches per activity
+lbls <- c("box", "worm", "taco", "belly", "back", "head/face", "unprovoked", "picking up") #labelling each section
+pie(slices, labels = lbls) #create pie chart
+
 
 ```
 
@@ -200,6 +205,10 @@ An artist statement gives the audience context to understand your work. Write 4-
 - the influences (what did techniques/artists/etc. did you find influential in creating your work?)  
 - the form of your work (written code, watercolor, oil painting, etc.)  
 - your process (how did you create your work?)  
+
+**This piece depicts the different scenarios in which my cat, Lucas, has scratched me over the last six weeks. The four activities that we engage when he scratches me are playing together, me picking him up, me petting him, and him scratching me completely unprovoked (seemingly). Pieces of a deconstructed pie chart that depict the proportion of scratches that took place during that activity float next to an illustration of Lucas engaging in that activity. The pieces are further broken down into the toy being used for playing and where on his body I was petting him for petting.**
+
+**I was inspired by Jill Pelto's paintings in which she incorporated graphs seemlessly into her paintings. I was unable to merge my chart with my drawing quite as well, but I tried to follow a similar idea. This work was created on paper using pencil and colored pens. After recording every time Lucas scratched me since April 26th, and what activity directly preceded it, I used that data to create a pie chart in R and traced the slices onto the sheet to get the proportions correct, then sketched the rest of the drawing by hand.**
 
 ### Problem 3. Statistical critique (36 points)
 
