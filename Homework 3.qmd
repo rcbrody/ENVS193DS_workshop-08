@@ -113,6 +113,13 @@ Make sure that the only output is the visualization!
 :::
 
 ```{r}
+
+model4 <- lm(total_g ~ water_treatment + species_name, #construct linear model using lm(y~x+x)
+             data = drought_exp_clean) #data from drought_exp_clean
+
+par(mfrow = c(2, 2)) #2x2 configuration of plots
+plot(model4) #check diagnostics
+
 model_preds <- ggpredict(model4, #make predictions using best model
                          terms = c("water_treatment", 
                                    "species_name")) #model includes these predictors
